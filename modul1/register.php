@@ -6,13 +6,13 @@ $password = htmlspecialchars(trim($_POST['password']));
 
 $errors='';
 if ($fio==null ){
-    $errors.='"fio": ["field fio can not be blank"],';
+    $errors.='"fio": "field fio can not be blank",';
 }
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
-    $errors.='"email": ["field email was entered incorrectly"],';
+    $errors.='"email": "field email was entered incorrectly",';
 }
 if (!ctype_alnum($password) || $password==null){
-    $errors.='"password": ["field password was entered incorrectly"]';
+    $errors.='"password": "field password was entered incorrectly"';
 }
 
 if($errors==""){
@@ -32,3 +32,4 @@ else{
             '.$errors.'
         }
 }');}
+
